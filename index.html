@@ -655,85 +655,109 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
+        
+        /* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
 
-            .nav-menu {
-                position: fixed;
-                left: 0;
-                top: 70px;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                flex: none;
-            }
+    .nav-menu {
+        position: fixed;
+        left: 0;
+        top: 70px;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        flex: none;
+    }
 
-            .nav-menu.active {
-                max-height: 500px;
-            }
+    .nav-menu.active {
+        max-height: 500px;
+    }
 
-            nav ul {
-                gap: 15px;
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
+    nav ul {
+        gap: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
 
-            nav ul li {
-                width: 100%;
-            }
+    nav ul li {
+        width: 100%;
+    }
 
-            nav ul li a {
-                display: block;
-                padding: 10px 0;
-            }
+    nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
 
-            .logo-header {
-                width: 80px;
-            }
+    .logo-header {
+        width: 80px;
+    }
 
-            .property-grid {
-                grid-template-columns: 1fr;
-            }
+    .property-grid {
+        grid-template-columns: 1fr;
+    }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
+    /* 🔴 સુધારો ૧: હીરો સેક્શનની હાઈટ ફિક્સ રાખવાને બદલે ઓટો કરી દીધી */
+    /* જો તમારા સેક્શનનો ક્લાસ .hero ન હોય તો તે નામ બદલી નાખજો */
+    .hero {
+        height: auto !important;
+        padding: 40px 15px !important;
+        width: 100% !important;
+        overflow: hidden;
+    }
 
-            .hero-text h1 {
-                font-size: 36px;
-            }
+    /* 🔴 સુધારો ૨: ગ્રીડ સિંગલ કોલમ થશે અને વિડ્થ પૂરી રાખશે */
+    .hero-content {
+        grid-template-columns: 1fr;
+        width: 100% !important;
+        padding: 0 !important;
+    }
 
-            .about-content {
-                grid-template-columns: 1fr;
-            }
+    /* 🔴 સુધારો ૩: ફોન્ટની સાઈઝ ૩૬ માંથી ૨૬ કે ૨૮ કરી જેથી શબ્દો કટ ન થાય */
+    .hero-text h1 {
+        font-size: 26px !important;
+        line-height: 1.3;
+        word-wrap: break-word; /* જો બહુ મોટો શબ્દ હોય તો એ નીચેની લાઈનમાં આવી જશે */
+    }
 
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+    .about-content {
+        grid-template-columns: 1fr;
+    }
 
-            .hero-buttons {
-                flex-direction: column;
-            }
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
-            nav {
-                flex-direction: row;
-                align-items: center;
-            }
-        }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    /* બટન પણ મોબાઈલમાં આખા આવી જાય તે માટે */
+    .hero-buttons a, .hero-buttons button {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: row;
+        align-items: center;
+    }
+}
     </style>
 </head>
 <body>
