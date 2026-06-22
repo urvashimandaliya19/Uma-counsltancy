@@ -656,18 +656,23 @@
                 width: 100%;
                 background: white;
                 flex-direction: column;
-                padding: 20px;
+                padding: 0px; /* સુધારો: બંધ હોય ત્યારે પેડિંગ 0 */
                 gap: 15px;
-                display: none; /* 🔴 સુધારો: નોર્મલ સમયે આખું મેનૂ અને બટન છુપાઈ જશે */
+                max-height: 0; /* આ જૂની રીત પાછી લાવીએ જે સ્મૂધ ખુલે છે */
+                opacity: 0;    /* સુધારો: બંધ હોય ત્યારે બધું અદ્રશ્ય થઈ જશે */
+                visibility: hidden; /* સુધારો: બટન પર ક્લિક પણ નહીં થાય */
                 overflow: hidden;
+                transition: all 0.3s ease;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 flex: none;
                 z-index: 999;
             }
 
             .nav-menu.active {
-                display: flex; /* 🔴 સુધારો: જ્યારે હેમબર્ગર પર ક્લિક થાય ત્યારે જ બટન સાથે મેનૂ દેખાશે */
                 max-height: 500px;
+                opacity: 1;           /* સુધારો: ખુલશે ત્યારે દેખાશે */
+                visibility: visible;   /* સુધારો: એક્ટિવ થશે */
+                padding: 20px;         /* સુધારો: ખુલ્યા પછી પેડિંગ આવશે */
             }
 
             
